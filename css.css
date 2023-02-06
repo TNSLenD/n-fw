@@ -1,0 +1,734 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;1,200;1,400;1,500&display=swap');
+*{
+    padding:0;
+    margin:0;
+    box-sizing: border-box;
+    font-family:'Poppins', sans-serif;
+    cursor: pointer;
+}
+
+/* them font moi tai tu tren gooogle ve */
+@font-face{
+    src:url(./font/Azedo-Bold.otf);
+    font-family: az;
+}
+
+ #wrap{
+    width: 100%;
+    height: 100vh;
+    /* 100vh có ý nghĩa là chiều cao của màng hình là 100% */
+ }
+
+ /* menu */
+ .header{
+    width: 100%;
+    padding: 0 20px;
+    /* margin-top: 2px; */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: gray;
+ }
+ p.logo a{
+    text-decoration: none;
+    font-size: 3em;
+    color: aliceblue;
+    padding-left: 20px;
+    /* font-family: az; */
+ }
+
+ ul{
+    display: flex;
+}
+ul li {
+    list-style-type: none;
+    margin: 0 10px;
+}
+ ul li a{
+    text-decoration: none;
+    color: white;
+    font-size: 1.1em;
+    padding: 0 30px;
+}
+ul li a:hover{
+    color: orange;
+    transition: 0.3s ease;
+    font-size: 1.4em;
+    /* tao do tre khi nhap */
+}
+
+ul.menu_child {
+	position: absolute;
+	width: 180px;
+	background-color: rgba(162, 179, 179, 0.453);
+     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+	z-index: 9999;
+    display: table-row;
+    /* padding: 0; */
+    /* padding-top: 5px; */
+
+}
+ul.menu_child li {
+	padding: 2px 0 2px ;
+	display: none;
+}
+ul#nav  li:hover ul.menu_child li {
+	display: block;
+}
+
+/* ta0 c0 dinh ch header  */
+.header {
+    position: fixed;
+    top: 0px;
+    left: 0;
+    right: 0;
+    height: 50px;
+    z-index: 1;
+}
+.ic{
+    display: flex;
+}
+
+.ic .it{
+    margin-left: 25px;
+    padding: 0 2px;
+    /* size: 2em; */
+    font-size: 20px;
+    color: white;
+}
+.ic .it:hover{
+    color: orange;
+    transition: 0.3s ease;
+    font-size: 25px;
+}
+
+/* banner */
+.banner{
+    width: 100%;
+    background-image: url(./img/h.jpg);
+    height: 450px;
+    margin-top: 55px;
+    display: flex;
+    position: relative;
+    padding: 0 100px;
+}
+
+.banner .tl, .banner .tr{
+    width: 50%;
+}
+.banner .tl h3{
+    font-size: 45px;
+    margin-top: 50px;
+    color: orange;
+}
+.banner .tl p{
+    font-size: 20px;
+    color: aliceblue;
+}
+
+.banner .tl button{
+    width: 190px;
+    height: 40px;
+    background: white;
+    color: black;
+    font-weight: bold;
+    margin-top: 50px;
+    border-radius: 20px ;
+    border-color: white;
+}
+.banner .tl button:hover{
+    color: orange;
+    transition: 0.3s ease;
+    background-color: orange;
+    border-color: orange;
+    color: white;
+}
+/* tạo chữ nhảy nhảy  */
+@keyframes animation {
+    0%{
+        transform:translateY(0px);
+    }
+    50%{
+        transform: translateY(-5px);
+    }
+    100%{
+        transform: translateY(0px);
+    }
+    
+}
+
+.banner .tr {
+    padding-left: 100px;
+}
+
+.banner .tr h5{
+    margin: 0 10px;
+    animation:  animation 3s infinite linear;
+    animation-delay: 0.7s;
+    font-size: 5em;
+    margin-top: 10px;
+    color: red;
+}
+.banner .tr p{
+    
+    font-size: 2em;
+    color: black;
+}
+
+/* product */
+.product{
+    padding: 50px 100px 78px;
+}
+
+.product h2{
+    text-align: center;
+    font-size: 3em;
+    color: rgb(14, 9, 9);
+    margin-bottom: 50px;
+    margin-top: 20px;
+    background-color: #ddd;
+    padding: 5px 0 5px;
+}
+#list {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+#list .item{
+    width: 260px;
+    height: 350px;
+    background-color: rgb(174, 158, 158);
+    border-radius: 10px;
+    margin-bottom: 30px;
+    margin-right: 30px;
+}
+
+#list .item img{
+    display: block;
+    margin: 0 auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    width: 70%;
+}
+#list .item .daban{
+    font-size: 0.5em;
+    color: white;
+    text-align: center;
+    margin-bottom: 10px;
+}
+#list .item .tensp{
+    font-size: 30px;
+    text-align: center;
+    color: orange;
+    font-weight: bold;
+}
+#list .item  .Gia{
+    font-size: 18px;
+    text-align: center;
+    color: white;
+    font-weight: bold;
+}
+ #list .item .button{
+    /* position: absolute; */
+    top: 100%;
+    left: 50%;
+    width: 100%;
+    transform: translate(1%,-500%);
+    text-align: center;
+    opacity: 0;
+    transition: 0.5s ease-out;
+    /* margin-left: 150px;
+    padding-bottom: 350px; */
+}
+#list .item:hover .button{
+    opacity: 1;
+    top: 50%;
+}
+#list .item .button a{
+    display: inline-block;
+    margin: 0 5px;
+    padding: 10px 15px;
+    background:grey;
+    color: #ffff;
+    border-radius: 20px;
+    text-decoration: none;
+    transition: 0.5s;
+}
+#list .item .button a:hover{
+    color: orange;
+}
+.l-page{
+    width: 50%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.l-page ul.lp li{
+    margin: 0 15px;
+    width: 35px;
+    height: 35px;
+    background-color: gray;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.l-page ul.lp li a{
+    color: white;
+    text-decoration: none;
+}
+.l-page ul.lp li a:hover{
+    color: orange;
+}
+/* sale  */
+.sale{
+    padding: 0px 100px 78px;
+}
+
+.sale h2{
+    text-align: center;
+    font-size: 3em;
+    color: rgb(14, 9, 9);
+    margin-bottom: 50px;
+    margin-top: 20px;
+    background-color: #ddd;
+    padding: 5px 0 5px;
+}
+.sale #list .item .text {
+    text-align: center;
+}
+.sale #list .item .text span{
+    color: white ;
+    font-weight: 600;
+}
+.sale #list .item .text span s{
+    font-weight: 300;
+}
+.sale #list .item span.s-dis{
+    width: 50px;
+    height: 50px;
+    background: #FF0040;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    color: #ffffff;
+    border-radius: 50%;
+    box-shadow: 3px 3px 5px #FF0040;
+    top: -294px;
+    right: -15px;
+    position: relative;
+}
+
+/* footer */
+.footer{
+    width: 100%;
+    background-color: grey;
+    height: 150px;
+    margin-top: 10px;
+    padding: 0 70px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.footer .box{
+    width: 250px;
+    color: white;
+    padding-top: 30px;
+}
+
+.footer .box p{
+    font-size: 0.78em;
+}
+/* f1 */
+.f1 p{
+    background-color: black;
+    color: white;
+    font-size: 0.6em;
+    padding: 3px ;
+    text-align: center;
+}
+
+/* pu  */
+.popup_shopping{
+    visibility: hidden;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background: #fff;
+    padding: 15px 30px;
+    z-index: 11;
+    width: 40rem;
+}
+.popup_shopping.active{
+    /* visibility: visible; */
+    animation: animate 1s ease-out forwards;
+}
+@keyframes animate{
+    0%{
+        visibility: hidden;
+        top: 0;
+    }
+    50%{
+        top: 40%;
+    }
+    80%{
+        top: 45%;
+    }
+    90%{
+        top: 50%; 
+    }
+    100%{
+        visibility: visible;
+    }
+}
+.overlay{
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    min-height: 100vh;
+    min-width: 100vw;
+    background: rgba(0, 0, 0, 0.8);
+    z-index: 10;
+}
+.overlay.active{
+    display: block;
+}
+.popup_shopping   table{
+    border-collapse: collapse;
+    width: 100%;
+}
+.popup_shopping   table td, th {
+    border: 1px solid #dddddd;
+    text-align: center;
+    padding: 8px;
+}
+.popup_shopping   table td a{
+    display: inline-block;
+    color: #fff;
+    text-decoration: none;
+    padding: 5px 15px;
+    margin: 5px;
+}
+.popup_shopping   table td a:first-child{
+    background: #FF0040;
+}
+.popup_shopping   table td a:last-child{
+    background: #0066ff;
+}
+.popup_shopping   .close{
+    text-align: right;
+    margin: 15px 0 0 0;
+}
+.popup_shopping   .close button{
+    background: #ff0000;
+    color: #fff;
+    font-weight: 600;
+    outline: none;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+.popup_shopping   .close button:hover{
+    opacity: 0.8;
+}
+
+.product h6{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    text-align: center;
+    padding: 10 2px;
+    font-size: 3.4em;
+    background-color: #ddd;
+    color: black;
+}
+
+/* ctsp */
+.view h4{
+    padding-top: 50px;
+    font-size: 3.4em;
+    color: gray;
+    text-align: center;
+}
+
+.view .item{
+    width: 300px;
+    height: 420px;
+    background-color: rgb(174, 158, 158);
+    border-radius: 10px;
+    margin: 0 auto;
+    margin-top: 30px;
+    margin-bottom: 40px;
+}
+.view .item img{
+    display: block;
+    margin: 0 auto;
+    padding-top: 20px;
+    margin-bottom: 20px;
+    width: 70%;
+
+}
+.view .item .daban{
+    font-size: 0.5em;
+    color: white;
+    text-align: center;
+    margin-bottom: 10px;
+}
+.view .item .tensp{
+    font-size: 30px;
+    text-align: center;
+    color: orange;
+    font-weight: bold;
+    padding-bottom: 10px;
+}
+.view .item .mt{
+
+    font-size: 0.9em;
+    text-align: center;
+}
+.view .item  .Gia{
+    font-size: 18px;
+    text-align: center;
+    color: white;
+    font-weight: bold;
+    padding-top: 010px;
+}
+.view .item .button{
+    /* position: absolute; */
+    top: 100%;
+    left: 50%;
+    width: 100%;
+    transform: translate(1%,-600%);
+    text-align: center;
+    opacity: 0;
+    transition: 0.5s ease-out;
+    /* margin-left: 150px;
+    padding-bottom: 350px; */
+}
+.view .item:hover .button{
+    opacity: 1;
+    top: 50%;
+}
+.view .item .button a{
+    display: inline-block;
+    margin: 0 5px;
+    padding: 10px 15px;
+    background:grey;
+    color: #ffff;
+    border-radius: 20px;
+    text-decoration: none;
+    transition: 0.5s;
+}
+.view .item .button a:hover{
+    color: orange;
+}
+@media only screen and (max-width:600px)  {
+/* header  */
+
+    #wrap .header ul {
+        display: none;
+    }
+    #wrap .header .ic .it:nth-child(2),#wrap .header .ic .it:nth-child(3){
+        display: none;
+    }
+
+/* sidebar  */
+
+/* baneer */
+#wrap .banner{
+    width: 100%;
+    height: 200px;
+    background-image: url(./img/h.jpg);
+    margin-top: 50px;
+    display: flex;
+    position: relative;
+    padding: 0 100px;
+}
+
+.banner .tl h3{
+    font-size: 18px;
+    margin-top: 15px;
+    color: orange;
+}
+.banner .tl p{
+    font-size: 10px;
+    color: aliceblue;
+}
+.banner .tl button{
+    width: 80px;
+    height: 40px;
+    background: white;
+    color: black;
+    font-weight: bold;
+    margin-top: 20px;
+    border-radius: 20px ;
+    border-color: white;
+    font-size: 10px;
+}
+
+.banner .tr h5{
+    margin: 0 10px;
+    animation:  animation 3s infinite linear;
+    animation-delay: 0.7s;
+    font-size: 1.8em;
+    margin-top: 10px;
+    margin-top: 50px;
+    margin-left: 10px;
+}
+.banner .tr p{
+    text-align: center;
+    font-size: 10px;
+    color: white;
+}
+.banner .tr {
+    padding-left: 20px;
+}
+
+/* prduct  */
+.product{
+    padding: 0;
+    margin-top: -20px;
+}
+.product h2{
+    font-size: 1em;
+    margin-bottom: 2px;
+}
+#list .item{
+    width: 130px;
+    height: 160px;
+    margin-bottom: 10px;
+    margin-right: 5px;
+}
+
+#list .item img{
+    margin: 0 auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width: 60%;
+}
+#list .item .daban{
+    font-size: 0.2em;
+    margin-top: -8px;
+}
+#list .item .tensp{
+    font-size: 25px;
+    margin-top: -15px;
+}
+#list .item  .Gia{
+    font-size: 12px;
+}
+#list .item .button{
+transform: translate(1%,-350%);
+}
+#list .item .button a{
+    margin: 0 2px;
+    padding: 5px 10px;
+    font-size: 8px;
+}
+
+.l-page ul.lp li{
+    margin: 0 3px;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+}
+
+.l-page ul.lp li a{
+    font-size: 8px;
+}
+/* sale  */
+.sale{
+    padding: 0 0 0 0;
+}
+
+.sale h2{
+    font-size: 1em;
+    margin-bottom: 5px;
+    margin-top: 5px;
+}
+.sale #list .item span.s-dis{
+    width: 30px;
+    height: 30px;
+    background: #FF0040;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    top: -180px;
+}
+.sale #list .item .button{
+    margin-top: -65px;
+}
+/* * footer */ */
+
+.footer .box{
+    width: 250px;
+    color: white;
+    padding-top: 5px;
+}
+.footer{
+    width: 100%;
+    height: 130px;
+    padding: 0;
+    padding: 0 10px;
+}
+
+.footer .box p{
+    font-size: 0.6em;
+}
+/* f1 */
+.f1 p{
+    font-size: 0.4em;
+    padding: 1px ;
+}
+/* ctsp  */
+.view h4{
+    font-size: 1em;
+    color: white;
+    background-color: #ddd;
+}
+
+.view .item{
+    width: 300px;
+    height: 350px;
+    background-color: rgb(174, 158, 158);
+    border-radius: 10px;
+    margin: 0 auto;
+    margin-top: 5px;
+    margin-bottom: -8px;
+}
+.view .item img{
+    display: block;
+    margin: 0 auto;
+    padding-top: 10px;
+    margin-bottom: 20px;
+    width: 70%;
+
+}
+.view .item .daban{
+    margin-bottom: 5px;
+    margin-top: -15px;
+}
+.view .item .tensp{
+    font-size: 30px;
+    margin-top: -10px;
+    margin-bottom: -10px;
+}
+.view .item .mt{
+    font-size: 0.7em;
+    color: aliceblue;
+}
+.product h6{
+    margin-top: 70px;
+    padding: 0 2px;
+    font-size: 1em;
+    margin-bottom: 2px;
+}
+}
